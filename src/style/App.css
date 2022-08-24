@@ -1,1 +1,17 @@
 
+
+/**** Navbar ****/
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+.link {
+  color: gray;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+.active {
+  color: purple;
+  text-decoration: underline
+}
