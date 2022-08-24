@@ -32,7 +32,7 @@
   text-decoration: none;
   width: 300px;
   border: 1px solid lightgray;
-  margin: 8px;
+  margin: 13px 10px;
   -webkit-transition: background-color 1000ms linear;
   -ms-transition: background-color 1000ms linear;
   transition:  400ms linear;
@@ -41,6 +41,25 @@
   cursor: pointer;
   border: 1px solid black;
   background-color: rgba(238, 238, 238, 0.4);
+}
+.product-inner-wrapper {
+  position: relative;
+}
+.count-badge {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: rgb(68, 78, 97);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 3px;
 }
 .prod-title {
   font-weight: bold;
@@ -185,3 +204,58 @@
   cursor: pointer;
   color: rgb(133, 133, 133);
 }
+.unsaved-changes {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(228, 1, 1);
+}
+.btn-warning {
+  background-color: rgb(209, 0, 0);
+}
+
+
+
+/**** Cart Counter Badge ****/
+.cart-count-badge {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: rgb(68, 78, 97);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-holder-icon {
+  outline: 1px solid lime;
+}
+.cart-icon {
+  font-size: 1.7rem;
+  color: rgb(169, 170, 173);
+}
+.cart-icon:hover {
+  cursor: pointer;
+}
+
+.active-cart {
+  
+}
+
+
+.icon-link {
+  color: gray;
+  font-size: 1.7rem;
+}
+.icon-active {
+  color: purple;
+  font-size: 1.7rem;
+  text-decoration: none;
+}
+.cart-clear-cart {
+  text-align: center;
+}
+.cart-clear-cart:hover {
+  cursor: pointer;
+  color: rgb(169, 170, 173);
+}
+

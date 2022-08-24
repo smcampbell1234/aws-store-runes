@@ -1,7 +1,17 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import React from 'react'
+import { NavLink } from "react-router-dom";
+import React, {useState,useEffect} from 'react'
+import { FaShoppingCart } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({cart}) => {
+  const [count,setCount] = useState(0)
+  const getItemCount = () => {
+    return Object.values(cart).reduce((acumulator,val) => acumulator + val,0)
+  }
+
+  useEffect(() => {
+    setCount(getItemCount);
+  },[cart])
+
   return (
     <nav className="navbar-wrapper">
       <NavLink 
@@ -16,6 +26,17 @@ const Navbar = () => {
         to="/login"
         className={({isActive}) => (isActive ? "link active" : "link")}
         >Login</NavLink>
+      {
+        !!count &&
+        <NavLink 
+        to="/cart"
+        className={({isActive}) => (isActive ? "icon-active" : "icon-link")}
+        >
+          <FaShoppingCart />
+          {/* <span className="cart-count-badge">{count}</span> */}
+          {count}
+        </NavLink>
+      }
     </nav>
   )
 }

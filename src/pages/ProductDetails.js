@@ -1,33 +1,53 @@
-import React, {useState, useEffect} from 'react'
-import { Navigate, NavLink, useNavigate, useParams } from "react-router-dom";
+import React, {useState} from 'react'
+import {useNavigate, useParams} from "react-router-dom";
 import {dummyData} from '../data/dummy'
 
-function ProductDetails() {
+function ProductDetails({cart,setCart,removeItem}) {
   let {prodId} = useParams();
   const navigate = useNavigate();
 
-  const [quantity,setQuantity] = useState(0);
-  const [count, setCount] = useState(0);
-  const [rating, setRating] = useState(0)
+  const [count, setCount] = useState(() => !!cart[prodId] ? cart[prodId] : 1);
+  // const [rating, setRating] = useState(0)
+  const [isSaved, setIsSaved] = useState(!!cart[prodId]);
   let item = dummyData.find((product) => (product.id).toString() === (prodId).toString())
-  useEffect(() => {
-    setQuantity(parseInt(item.quantity))
-    setRating(parseInt(item.rating))
-  },[])
+  
 
+  // handlers
   const handleCounter = (which) => {
     if (which === 'inc') {
-      if (count < quantity)
+      if (count < item.quantity) {
         setCount(prev => prev + 1)
+        setIsSaved(false)
+      }
     } else {
-      if (count > 0)
+      if (count > 1){
+        let newCart = {...cart}
+        newCart[item.id] = count -1;
+        setCart(newCart)
         setCount(prev => prev - 1)
+        setIsSaved(true)
+      } else {
+        // remove iten
+        removeItem(item.id)
+        setIsSaved(false)
+      }
     }
+  }
+
+  const handleCart = () => {
+    // since we override one key-value pare, 
+    // we don't need to chick if item already exists
+    let newCart = {...cart}
+    newCart[item.id] = count;
+    setCart(newCart)
+    setIsSaved(true)
+    navigate("/store")
   }
   
   const handleBackClick = () => {
     navigate("/store")
   }
+
   return (
     <section className="detail-wrapper">
         <div className="detail-img-wrapper">
@@ -61,7 +81,7 @@ function ProductDetails() {
                 <span className="number">{count}</span>
                 <div className="count-button" onClick={()=>handleCounter("inc")}>&#x2191;</div>
               </div>
-              <div className="add-to-cart-btn">Add To Cart</div>
+              <div className={!isSaved ? "add-to-cart-btn btn-warning" : "add-to-cart-btn"} onClick={handleCart}>Add To Cart</div>
             </div>
           }
           <div className="back-to-store-wrapper">
