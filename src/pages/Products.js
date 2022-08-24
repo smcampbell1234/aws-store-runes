@@ -9,7 +9,7 @@ function Products() {
         dummyData.map((item,idx) => {
           return (
             <Link 
-              to={`/products/${item.prodId}`}
+              to={`/products/${item.id}`}
               className="product"
               key={idx}
             >
@@ -28,9 +28,9 @@ function Products() {
               <div className="item-quantity">
                 {
                   !!parseInt(item.quantity) ?
-                  <div class="in-stock">{parseInt(item.quantity)} left in stock</div>
+                  <div className="in-stock">{parseInt(item.quantity)} left in stock</div>
                   :
-                  <div className="out-of-stock">out Of stock</div>
+                  <div className="out-of-stock">out of stock</div>
                 }
               </div>
             </Link>

@@ -70,20 +70,118 @@
 .itemPrice {
   display: flex;
   justify-content: space-around;
-  margin: 8px;
+  /* margin: 8px; */
   font-size: 1.3rem;
 }
 .item-quantity {
-  margin: 8px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  /* margin: 8px; */
+  /* margin-top: 15px;
+  margin-bottom: 15px; */
 }
 .in-stock {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .out-of-stock {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: rgb(132, 0, 0);
+}
+
+/**** Product Detail ****/
+.detail-wrapper {
+  width: 90%;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  /* justify-content: space-evenly; */
+  justify-content: space-between;
+}
+.detail-img-wrapper {
+  width: 45%;
+}
+.detail-img-wrapper img {
+  max-width: 300px;
+  height: 300px;
+  object-fit: fit;
+}
+.detail-details-wrapper {
+  width: 45%;
+  padding: 8px;
+  font-size: 1.2rem;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.detail-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.detail-img-wrapper img {
+  max-width: 300px;
+  height: 300px;
+  object-fit: fit;
+}
+.add-to-cart-wrapper {
+  display: flex;
+  justify-content: space-around;
+  /* margin-top: 35px; */
+}
+.detail-description {
+  /* margin: 15px 10px 15px 10px; */
+}
+.counter {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+.counter .number {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.count-button {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 3px;
+}
+.count-button:hover {
+  cursor: pointer;
+  color: rgb(133, 133, 133);
+}
+.add-to-cart-btn {
+  font-size: 1.8rem;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 3px 20px 3px 20px;
+  background-color: rgb(133, 133, 133);
+  color: white;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition:  200ms linear;
+}
+.add-to-cart-btn:hover {
+  cursor: pointer;
+  background-color: lightgray;
+  color: rgb(133, 133, 133);
+}
+.back-to-store-wrapper {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.back-to-store-btn {
+  color: rgb(14, 14, 92);
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition:  200ms linear;
+}
+.back-to-store-btn:hover {
+  cursor: pointer;
+  color: rgb(133, 133, 133);
 }
