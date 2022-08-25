@@ -3,7 +3,8 @@ import Home from './Home';
 import Login from './Login';
 import Products from './Products';
 import ProductDetails from './ProductDetails';
-import Cart from './Cart'
+import Cart from './Cart';
+import Admin from './Admin';
 
 export {
   Error,
@@ -11,5 +12,6 @@ export {
   Login,
   Products,
   ProductDetails,
-  Cart
+  Cart,
+  Admin
 }

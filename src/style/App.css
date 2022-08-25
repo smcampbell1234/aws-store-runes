@@ -6,10 +6,7 @@
   justify-content: space-around;
   padding: 15px;
 }
-.active {
-  color: purple;
-  text-decoration: underline
-}
+
 
 /**** Store ****/
 .store-wrapper {
@@ -253,6 +250,10 @@
   flex-shrink: 1;
   flex-basis: auto;
 }
+.active {
+  color: purple;
+  text-decoration: underline
+}
 .link-login-inactive {
   color: gray;
   text-decoration: none;
@@ -310,3 +311,69 @@
   color: rgb(133, 133, 133);
 }
 
+/**** Admin Page ****/
+.admin-wrapper {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.admin-wrapper h1 {
+  text-align: center;
+}
+
+#new-item-form {
+  font-size: 1.3rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.new-form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.new-item-label {
+  margin-right: 10px;
+  width: 25%;
+  display: inline-block;
+  text-align: right;
+}
+.input-container {
+  outline: 1px solid lime;
+}
+.new-item-input-wrapper{
+  width: 100%;
+  outline: 1px solid red;
+}
+.new-item-input {
+  width: 90%;
+  font-size: 1.3rem;
+  outline: 1px solid blue;
+}
+.new-submit {
+  font-size: 1.3rem;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.new-item-clear {
+  margin-left: 15px;
+  color: blue;
+}
+.new-item-clear:hover {
+  cursor: pointer;
+  margin-left: 15px;
+  color: rgb(177, 177, 239);
+}
+.new-item-description {
+  font-size:.8rem;
+  text-decoration: italic;
+  color: gray;
+}
+.invalid-item-error {
+  font-size: .9rem;
+  text-decoration: italic;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}

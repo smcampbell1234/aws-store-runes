@@ -15,3 +15,9 @@ npm install react-icons --save
 // in Navbar.js
 import { IconName } from "react-icons/fa";
 ```
+
+Lodash
+
+```
+npm i --save lodash
+```
