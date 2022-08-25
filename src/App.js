@@ -2,7 +2,17 @@ import {useState} from 'react';
 import {BrowserRouter, Routes, Route, useNavigate} from "react-router-dom";
 import './style/App.css';
 import Navbar from './components/Navbar';
-import { Error, Home, Login, Products,ProductDetails,Cart,Admin} from './pages';
+import { 
+  Error, 
+  Home, 
+  Login, 
+  Products,
+  ProductDetails,
+  Cart,
+  Dashboard,
+  EditItem,
+  AddItem
+  } from './pages';
 
 function App() {
   const [cart,setCart] = useState({});
@@ -35,7 +45,10 @@ function App() {
                       />} 
         />
         <Route path="/cart" element={<Cart cart={cart} removeItem={removeItem} clearCart={clearCart} />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="dashboard" element={<Dashboard />}>
+          <Route path="add" element={<AddItem />} />
+          <Route path="edit" element={<EditItem />} />
+        </Route>
         <Route path="error" element={<Error />} />
         <Route path="*" element={<Error />} />
       </Routes>

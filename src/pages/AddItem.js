@@ -45,11 +45,6 @@ function Admin() {
 
       console.log(".... Attempting to post item")
       postProduct(newItem)
-
-
-
-
-
       setError({error:false,msg:""})
       setValue({})
     }
@@ -61,7 +56,6 @@ function Admin() {
 
   return (
     <div className="admin-wrapper">
-      <h1>Manage Store</h1>
       <form id="new-item-form" onSubmit={handleSubmit}>
         {itemFields.map(([field,description,required],idx) => (
           <FormLine 

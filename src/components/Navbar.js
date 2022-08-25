@@ -24,10 +24,10 @@ const Navbar = ({cart}) => {
         >Store</NavLink>
 
       <NavLink
-        to="/admin"
+        to="/dashboard/edit"
         className={({isActive}) => isActive ? "link active" : "link"}
       >
-        Admin
+        Dashboard
       </NavLink>
         
       <div className="nav-login-cart link">

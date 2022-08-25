@@ -343,7 +343,6 @@
 }
 .new-item-input-wrapper{
   width: 100%;
-  outline: 1px solid red;
 }
 .new-item-input {
   width: 90%;
@@ -376,4 +375,30 @@
   color: red;
   text-align: center;
   font-weight: bold;
+}
+
+
+
+.dashboard-navbar-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px;
+}
+.no-margin {
+  margin: 0px;
+}
+.dash-link {
+  /* margin: 0 10%; */
+}
+.dummy-div {
+  width: 120px;
+  height: 5px;
+}
+.dashboard-wrapper {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  outline: 1px solid lightgray;
 }

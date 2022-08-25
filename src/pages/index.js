@@ -4,7 +4,9 @@ import Login from './Login';
 import Products from './Products';
 import ProductDetails from './ProductDetails';
 import Cart from './Cart';
-import Admin from './Admin';
+import Dashboard from './Dashboard';
+import EditItem from './EditItem';
+import AddItem from './AddItem';
 
 export {
   Error,
@@ -13,5 +15,7 @@ export {
   Products,
   ProductDetails,
   Cart,
-  Admin
+  Dashboard,
+  EditItem,
+  AddItem
 }
