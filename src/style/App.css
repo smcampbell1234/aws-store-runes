@@ -6,11 +6,6 @@
   justify-content: space-around;
   padding: 15px;
 }
-.link {
-  color: gray;
-  text-decoration: none;
-  font-size: 1.4rem;
-}
 .active {
   color: purple;
   text-decoration: underline
@@ -217,14 +212,8 @@
 
 /**** Cart Counter Badge ****/
 .cart-count-badge {
-  width: 25px;
-  height: 25px;
-  border-radius: 15px;
-  background-color: rgb(68, 78, 97);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-decoration: none;
+  margin-left: 3px;
 }
 .cart-holder-icon {
   outline: 1px solid lime;
@@ -237,19 +226,37 @@
   cursor: pointer;
 }
 
-.active-cart {
-  
-}
-
 
 .icon-link {
   color: gray;
   font-size: 1.7rem;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
 }
 .icon-active {
   color: purple;
   font-size: 1.7rem;
   text-decoration: none;
+  display: flex;
+  justify-content: space-between
+}
+
+.link-login {
+  margin-right: 8px;
+}
+.link {
+  color: gray;
+  text-decoration: none;
+  font-size: 1.4rem;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+.link-login-inactive {
+  color: gray;
+  text-decoration: none;
+  margin-right: 10px;
 }
 .cart-clear-cart {
   text-align: center;
@@ -257,5 +264,49 @@
 .cart-clear-cart:hover {
   cursor: pointer;
   color: rgb(169, 170, 173);
+}
+.nav-login-cart {
+  display: flex;
+  justify-content: space-between
+}
+
+.checkout-btn-wrapper {
+  text-align: center;
+}
+
+
+
+
+
+.checkout-btn {
+  margin-top: 50px;
+  font-size: 1.8rem;
+  /* border: 1px solid lightgray; */
+  border-radius: 5px;
+  padding: 3px 20px 3px 20px;
+  /* background-color: rgb(133, 133, 133); */
+  color: white;
+  color: red;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition:  200ms linear;
+}
+.checkout-btn:hover {
+  cursor: pointer;
+  /* background-color: lightgray; */
+  color: rgb(133, 133, 133);
+}
+
+.cart-back-to-store-btn {
+  color: rgb(14, 14, 92);
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition:  200ms linear;
+  font-size: 1.8rem;
+  color: green;
+}
+.cart-back-to-store-btn:hover {
+  cursor: pointer;
+  color: rgb(133, 133, 133);
 }
 

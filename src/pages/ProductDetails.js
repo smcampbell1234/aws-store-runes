@@ -10,7 +10,7 @@ function ProductDetails({cart,setCart,removeItem}) {
   // const [rating, setRating] = useState(0)
   const [isSaved, setIsSaved] = useState(!!cart[prodId]);
   let item = dummyData.find((product) => (product.id).toString() === (prodId).toString())
-  
+  const isCartEmpty = Object.keys(cart).length === 0;
 
   // handlers
   const handleCounter = (which) => {
@@ -41,10 +41,6 @@ function ProductDetails({cart,setCart,removeItem}) {
     newCart[item.id] = count;
     setCart(newCart)
     setIsSaved(true)
-    navigate("/store")
-  }
-  
-  const handleBackClick = () => {
     navigate("/store")
   }
 
@@ -84,8 +80,14 @@ function ProductDetails({cart,setCart,removeItem}) {
               <div className={!isSaved ? "add-to-cart-btn btn-warning" : "add-to-cart-btn"} onClick={handleCart}>Add To Cart</div>
             </div>
           }
+          {
+            !isCartEmpty &&
+            <div className="checkout-btn-wrapper">
+              <span className="checkout-btn" onClick={() => navigate("/cart")}>CHECK OUT</span>
+            </div>
+          }
           <div className="back-to-store-wrapper">
-            <span className="back-to-store-btn" onClick={() => handleBackClick()}>&#8592; back to store</span>
+            <span className="back-to-store-btn" onClick={() => navigate("/store")}>&#8592; back to store</span>
           </div>
         </div>
     </section>

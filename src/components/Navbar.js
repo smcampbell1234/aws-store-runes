@@ -22,21 +22,24 @@ const Navbar = ({cart}) => {
         to="/store"
         className={({isActive}) => (isActive ? "link active" : "link")}
         >Store</NavLink>
-      <NavLink 
-        to="/login"
-        className={({isActive}) => (isActive ? "link active" : "link")}
-        >Login</NavLink>
-      {
-        !!count &&
+        
+      <div className="nav-login-cart link">
         <NavLink 
-        to="/cart"
-        className={({isActive}) => (isActive ? "icon-active" : "icon-link")}
-        >
-          <FaShoppingCart />
-          {/* <span className="cart-count-badge">{count}</span> */}
-          {count}
-        </NavLink>
-      }
+        to="/login"
+        className={({isActive}) => (isActive ? "link-login active" : "link-login-inactive")}
+        >Login@gmail.com</NavLink>
+        {
+          !!count &&
+          <NavLink 
+          to="/cart"
+          className={({isActive}) => (isActive ? "icon-active" : "icon-link")}
+          >
+            <FaShoppingCart />
+            <div className="cart-count-badge">{count}</div>
+          </NavLink>
+        }
+      </div>
+
     </nav>
   )
 }
