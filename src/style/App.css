@@ -575,3 +575,16 @@
   cursor:pointer;
   background-color: lightgray;
 }
+
+
+
+.logout-button {
+  /* font-size: 1rem; */
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition:  200ms linear;
+}
+.logout-button:hover {
+  cursor:pointer;
+  color: lightgray;
+}

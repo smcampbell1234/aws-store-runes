@@ -7,6 +7,7 @@ import Cart from './Cart';
 import Dashboard from './Dashboard';
 import EditItem from './EditItem';
 import AddItem from './AddItem';
+import ProtectedPage from './ProtectedPage';
 
 export {
   Error,
@@ -17,5 +18,6 @@ export {
   Cart,
   Dashboard,
   EditItem,
-  AddItem
+  AddItem,
+  ProtectedPage
 }

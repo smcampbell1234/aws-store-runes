@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import React, {useState,useEffect} from 'react'
 import { FaShoppingCart } from "react-icons/fa";
 
-const Navbar = ({cart}) => {
+const Navbar = ({cart,user,handleLogout}) => {
   const [count,setCount] = useState(0)
   const getItemCount = () => {
     return Object.values(cart).reduce((acumulator,val) => acumulator + val,0)
@@ -11,6 +11,9 @@ const Navbar = ({cart}) => {
   useEffect(() => {
     setCount(getItemCount);
   },[cart])
+
+
+  let isLoggedIn = !!user.name && !!user.email;
 
   return (
     <nav className="navbar-wrapper">
@@ -23,18 +26,34 @@ const Navbar = ({cart}) => {
         className={({isActive}) => isActive ? "link active" : "link"}
         >Store</NavLink>
 
-      <NavLink
-        to="/dashboard"
-        className={({isActive}) => isActive ? "link active" : "link"}
-      >
-        Dashboard
-      </NavLink>
+      {
+        !!user.name && !!user.email &&
+        <NavLink
+          to="/dashboard"
+          className={({isActive}) => isActive ? "link active" : "link"}
+        >
+          Dashboard
+        </NavLink>
+      }
         
       <div className="nav-login-cart link">
+        
+      {
+        !isLoggedIn ?
         <NavLink 
         to="/login"
         className={({isActive}) => (isActive ? "link-login active" : "link-login-inactive")}
-        >Login@gmail.com</NavLink>
+        >Login</NavLink>
+        :
+        <span >{user.name} / <span className="logout-button" onClick={handleLogout}>Logout</span></span>
+      }
+
+
+        
+
+
+
+
         {
           !!count &&
           <NavLink 

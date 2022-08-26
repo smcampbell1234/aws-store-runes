@@ -11,7 +11,8 @@ import {
   Cart,
   Dashboard,
   EditItem,
-  AddItem
+  AddItem,
+  ProtectedPage
   } from './pages';
   import {url} from './api/storeApi';
 
@@ -44,18 +45,26 @@ function App() {
     setCart({});
     navigate("/store");
   }
+  const handleLogout = () => {
+    setUser({name: "", email: ""})
+    navigate("/")
+  }
 
   console.log(".... user : ",user)
   return (
     <div className="App">
-      <Navbar cart={cart}/>
+      <Navbar cart={cart} user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login setUser={setUser} />} />
         <Route path="store" element={<Products cart={cart} removeItem={removeItem} items={items} />} />
         <Route path="products/:prodId" element={<ProductDetails cart={cart} setCart={setCart} removeItem={removeItem} items={items} />} />
         <Route path="/cart" element={<Cart cart={cart} removeItem={removeItem} clearCart={clearCart} />} />
-        <Route path="dashboard" element={<Dashboard />}>
+        <Route path="dashboard" element={
+          <ProtectedPage user={user}>
+            <Dashboard />
+          </ProtectedPage> 
+        }>
           <Route index element={<EditItem items={items} setItems={setItems} />} />
           <Route path="edit" element={<EditItem items={items} setItems={setItems} />} />
           <Route path="add" element={<AddItem />} />
