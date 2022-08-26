@@ -12,7 +12,7 @@ function Login({setUser}) {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!!auth.name && !!auth.email) {
+    if (!!auth.name && auth.name==="runes" && !!auth.email && auth.email === "runes") {
       setUser(auth)
       navigate("/dashboard")
     } else {
