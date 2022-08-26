@@ -1,25 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import {url} from '../api/storeApi';
 
-let url = "https://iu02eobxgk.execute-api.us-east-1.amazonaws.com/dev/products";
-
-function EditItem() {
-  const [items,setItems] = useState([])
-
-  const fetchProducts = async () => {
-    try {
-      let response = await fetch(url);
-      const data = await response.json();
-      console.log(data.Items)
-      setItems(data.Items)
-    } catch (err) {
-      console.log("Failed to retrieve items to edit.")
-    }
-  }
-
-  useEffect(() => {
-    fetchProducts()
-  },[])
-
+function EditItem({items,setItems}) {
   const deleteItem = async (id) => {
     try {
       const urlDelete = url + `/${id}`
@@ -27,8 +9,6 @@ function EditItem() {
         method: 'DELETE'
       })
       const data = await response.json();
-      console.log("Success : ",data)
-
       // remove from list
       let newList = items.filter((item) => item.prodId !== id)
       setItems(newList);
@@ -38,7 +18,6 @@ function EditItem() {
     }
   }
 
-  console.log(".... Items : ",items)
   return (
     <div>
       {

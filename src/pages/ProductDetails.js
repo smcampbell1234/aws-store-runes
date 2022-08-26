@@ -1,15 +1,15 @@
 import React, {useState} from 'react'
 import {useNavigate, useParams} from "react-router-dom";
-import {dummyData} from '../data/dummy'
+import {renderPrice} from "../utils/renderPrice"
 
-function ProductDetails({cart,setCart,removeItem}) {
+function ProductDetails({cart,setCart,removeItem,items,setItems}) {
   let {prodId} = useParams();
   const navigate = useNavigate();
 
   const [count, setCount] = useState(() => !!cart[prodId] ? cart[prodId] : 1);
   // const [rating, setRating] = useState(0)
   const [isSaved, setIsSaved] = useState(!!cart[prodId]);
-  let item = dummyData.find((product) => (product.id).toString() === (prodId).toString())
+  let item = items.find((product) => (product.prodId).toString() === (prodId).toString())
   const isCartEmpty = Object.keys(cart).length === 0;
 
   // handlers
@@ -22,13 +22,13 @@ function ProductDetails({cart,setCart,removeItem}) {
     } else {
       if (count > 1){
         let newCart = {...cart}
-        newCart[item.id] = count -1;
+        newCart[item.prodId] = count -1;
         setCart(newCart)
         setCount(prev => prev - 1)
         setIsSaved(true)
       } else {
-        // remove iten
-        removeItem(item.id)
+        // remove item
+        removeItem(item.prodId)
         setIsSaved(false)
       }
     }
@@ -38,7 +38,7 @@ function ProductDetails({cart,setCart,removeItem}) {
     // since we override one key-value pare, 
     // we don't need to chick if item already exists
     let newCart = {...cart}
-    newCart[item.id] = count;
+    newCart[item.prodId] = count;
     setCart(newCart)
     setIsSaved(true)
     navigate("/store")
@@ -55,11 +55,7 @@ function ProductDetails({cart,setCart,removeItem}) {
           <div className="detail-title">{item.title}</div>
           <div className="detail-description">{item.description.substring(0,90)}...</div>
           <div className="itemPrice">
-            {
-              !!item.sale &&
-              <div><s>{(parseFloat(item.price) - parseFloat(item.price) * parseFloat(item.sale)/100).toFixed(2)}</s></div>
-            }
-            <div>{item.price}</div>
+            <div>{renderPrice(item)}</div>
           </div>
           <div className="products-item-quantity">
             {

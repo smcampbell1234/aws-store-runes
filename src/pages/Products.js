@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import {dummyData} from '../data/dummy'
+import {renderPrice} from "../utils/renderPrice"
 
-function Products({cart}) {
-
+function Products({cart, items}) {
   return (
     <section className="store-wrapper">
       {
-        dummyData.map((item,idx) => {
+        items.map((item,idx) => {
           let count = 0;
-          if (cart[item.id])
-            count = cart[item.id]
+          if (cart[item.prodId])
+            count = cart[item.prodId]
           return (
             <Link 
-              to={`/products/${item.id}`}
+              to={`/products/${item.prodId}`}
               className="product"
               key={idx}
             >
@@ -22,19 +21,13 @@ function Products({cart}) {
                  <div className="count-badge">{count}</div>
                 </div>
               }
-              
-
               <div className="prod-title">{item.title}</div>
                 <div className="item-image">
                   <img src={item.image} />
                 </div>
                 <div className="products-item-description">{item.description.substring(0,90)}...</div>
                 <div className="itemPrice">
-                  {
-                    !!item.sale &&
-                    <div><s>{(parseFloat(item.price) - parseFloat(item.price) * parseFloat(item.sale)/100).toFixed(2)}</s></div>
-                  }
-                  <div>{item.price}</div>
+                  <div>{renderPrice(item)}</div>
                 </div>
                 <div className="products-item-quantity">
                   {
@@ -45,7 +38,6 @@ function Products({cart}) {
                   }
                 </div>
             </Link>
-
           )
         })
       } 

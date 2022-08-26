@@ -504,3 +504,10 @@
   cursor: pointer;
   color: rgb(187, 68, 68);
 }
+
+.price-line-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+
+}
