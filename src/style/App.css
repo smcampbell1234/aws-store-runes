@@ -532,3 +532,46 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+
+/**** Login Page ****/
+.login-wrapper {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+.login-wrapper h2 {
+  text-align: center;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+.login-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px; 
+  margin-bottom: 25px; 
+}
+.login-button {
+  font-size: 1.4rem;
+  background-color: none;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80%;
+  margin-top: 30px;
+  font-weight: bold;
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition:  200ms linear;
+}
+.login-button:hover {
+  cursor:pointer;
+  background-color: lightgray;
+}
