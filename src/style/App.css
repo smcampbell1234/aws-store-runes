@@ -588,3 +588,27 @@
   cursor:pointer;
   color: lightgray;
 }
+
+.error-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.error-wrapper img {
+  height: 250px;
+  width: 250px;
+}
+.error-wrapper h2 {
+  text-align: center;
+}
+.error-wrapper h3 {
+  text-align: center;
+  color: red;
+  margin: 20px;
+  font-size: 1.6rem;
+}
+.error-wrapper h3:hover {
+  cursor: pointer;
+  color: rgb(248, 99, 99);
+}
