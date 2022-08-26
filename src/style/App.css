@@ -61,6 +61,10 @@
   margin: 8px;
   text-overflow: ellipsis;
 }
+.item-image-wrapper {
+  width: 235px;
+  position: absolute;
+}
 .item-image {
   display: flex;
   justify-content: center;
@@ -70,6 +74,16 @@
   width: 90%;
   height: 300px;
   object-fit: fit;
+}
+.item-stamp {
+  color: red;
+  font-size: 1.8rem;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 5px;
+  right: -33px;
+  font-weight: bold;
+  font-family:'Courier New', Courier, monospace;
 }
 .products-item-description {
   margin: 8px;
@@ -509,5 +523,12 @@
   display: flex;
   justify-content: space-around;
   width: 300px;
+}
 
+.products-category {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

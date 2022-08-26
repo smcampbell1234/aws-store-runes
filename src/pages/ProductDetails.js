@@ -53,10 +53,13 @@ function ProductDetails({cart,setCart,removeItem,items,setItems}) {
         </div>
         <div className="detail-details-wrapper">
           <div className="detail-title">{item.title}</div>
-          <div className="detail-description">{item.description.substring(0,90)}...</div>
+          <div className="detail-description">{item.description}</div>
           <div className="itemPrice">
             <div>{renderPrice(item)}</div>
           </div>
+          <div className="products-category">
+                    Category: {item.category}
+                </div>
           <div className="products-item-quantity">
             {
               !!parseInt(item.quantity) ?

@@ -29,11 +29,6 @@ const Navbar = ({cart}) => {
       >
         Dashboard
       </NavLink>
-
-      <NavLink 
-        to="/dashboard/add"
-        className={({isActive}) => isActive ? "link active" : "link"}
-      />
         
       <div className="nav-login-cart link">
         <NavLink 

@@ -22,12 +22,22 @@ function Products({cart, items}) {
                 </div>
               }
               <div className="prod-title">{item.title}</div>
+                
                 <div className="item-image">
-                  <img src={item.image} />
+                <div className="item-image-wrapper">
+                  <div className="item-stamp">{item.stamp}</div>
                 </div>
+                  <img src={item.image} />
+                  
+                </div>
+                 
+                
                 <div className="products-item-description">{item.description.substring(0,90)}...</div>
                 <div className="itemPrice">
                   <div>{renderPrice(item)}</div>
+                </div>
+                <div className="products-category">
+                    Category: {item.category}
                 </div>
                 <div className="products-item-quantity">
                   {
