@@ -28,7 +28,7 @@ function Products({cart}) {
                 <div className="item-image">
                   <img src={item.image} />
                 </div>
-                <div className="item-description">{item.description.substring(0,90)}...</div>
+                <div className="products-item-description">{item.description.substring(0,90)}...</div>
                 <div className="itemPrice">
                   {
                     !!item.sale &&
@@ -36,7 +36,7 @@ function Products({cart}) {
                   }
                   <div>{item.price}</div>
                 </div>
-                <div className="item-quantity">
+                <div className="products-item-quantity">
                   {
                     !!parseInt(item.quantity) ?
                     <div className="in-stock">{parseInt(item.quantity)} left in stock</div>

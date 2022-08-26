@@ -6,14 +6,14 @@ function DashboardNavbar() {
     <nav className="dashboard-navbar-wrapper">
       <NavLink 
         to="/dashboard/edit"
-        className={({isActive}) => isActive ? "dash-link link active" : "dash-link link"}
+        className={({isActive}) => isActive ? "dash-link link dash-active" : "dash-link link"}
         >Edit</NavLink>
       <NavLink 
         to="/dashboard/add"
-        className={({isActive}) => (isActive ? "dash-link link active" : "dash-link link")}
+        className={({isActive}) => (isActive ? "dash-link link dash-active" : "dash-link link")}
         >Add</NavLink>
-      <div class="dummy-div"/>
-      <div class="dummy-div"/>
+      <div className="dummy-div"/>
+      <div className="dummy-div"/>
     </nav>
   )
 }

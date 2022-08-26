@@ -46,8 +46,10 @@ function App() {
         />
         <Route path="/cart" element={<Cart cart={cart} removeItem={removeItem} clearCart={clearCart} />} />
         <Route path="dashboard" element={<Dashboard />}>
-          <Route path="add" element={<AddItem />} />
+          <Route index element={<EditItem />} />
           <Route path="edit" element={<EditItem />} />
+          <Route path="add" element={<AddItem />} />
+          <Route path="*" element={<Error />} />
         </Route>
         <Route path="error" element={<Error />} />
         <Route path="*" element={<Error />} />

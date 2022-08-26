@@ -61,7 +61,7 @@ function ProductDetails({cart,setCart,removeItem}) {
             }
             <div>{item.price}</div>
           </div>
-          <div className="item-quantity">
+          <div className="products-item-quantity">
             {
               !!parseInt(item.quantity) ?
               <div className="in-stock">{parseInt(item.quantity)} left in stock</div>

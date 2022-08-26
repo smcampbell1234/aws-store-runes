@@ -5,8 +5,8 @@ import {Outlet} from "react-router-dom";
 function AdminDashboard() {
   return (
     <div>
-      <DashboardNavbar />
       <div className="dashboard-wrapper">
+        <DashboardNavbar />
         <Outlet />
       </div>
     </div>
