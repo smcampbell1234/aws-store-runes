@@ -558,6 +558,10 @@
   margin: 15px; 
   margin-bottom: 25px; 
 }
+.login-logo img {
+  width: 220px;
+  height: 220px;
+}
 .login-button {
   font-size: 1.4rem;
   background-color: none;
@@ -709,4 +713,12 @@
 .icon:hover {
   cursor: pointer;
   color: lightgray;
+}
+
+
+.login-err-msg {
+  text-align: center;
+  color: red;
+  font-size: 1.1rem;
+  font-weight: bold;
 }

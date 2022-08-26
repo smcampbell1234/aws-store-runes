@@ -22,9 +22,8 @@ function Login({setUser}) {
  
   return (
     <div className="login-wrapper">
-      <h2>Login</h2>
       <div className="login-logo">
-        <img src="https://png.pngitem.com/pimgs/s/169-1691628_oojs-ui-icon-key-ltr-key-icon-png.png" />
+        <img src="https://img.freepik.com/premium-vector/bearded-viking-warrior-head_9645-1418.jpg?w=2000" alt="viking" />
       </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <FormLine 
@@ -41,11 +40,11 @@ function Login({setUser}) {
             value={auth}
             required="not-req"
         />
-        <button className="login-button" type="submit">Enter Site</button>
+        <button className="login-button" type="submit">Enter At Your Own Risk</button>
       </form>
       {
         error.status &&
-        <p>{error.message}</p>
+        <p className="login-err-msg">{error.message}</p>
       }
     </div>
   )
