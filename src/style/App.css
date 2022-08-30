@@ -664,6 +664,7 @@
 .home-header-gallery {
   font-size: 3rem;
   font-weight: bold;
+  text-align: center;
   /* margin-top: 85px; */
   /* outline: 1px solid green; */
 }
