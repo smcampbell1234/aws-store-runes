@@ -1,9 +1,11 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 import { FaInstagram, FaYoutubeSquare, FaFacebook, FaTwitterSquare  } from "react-icons/fa";
+import { dungeon_images } from "../data/dungeon_images"
 
 function Home() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  console.group("... data : ",dungeon_images)
   return (
     <div className="home-wrapper">
       <h2 className="home-header">Forbidden Runes</h2>
@@ -24,15 +26,14 @@ function Home() {
       <h2 className="home-header-gallery">Forbidden Gallery</h2>
 
       <div className="image-gallery">
-        Gallery currently forbidden.
+        {
+          dungeon_images.map((image,idx) => {
+            return <div className="gallary-image-wrapper" key={idx}>
+                <img src={image.url} alt={image.title} height={image.height} width={image.width} />
+              </div>
+          })
+        }
       </div>
-
-      <h2 className="home-header-gallery">Forbidden Dungeons</h2>
-
-      <div className="image-gallery">
-        Dungeons currently forbidden.
-      </div>
-
 
       <div className="to-store" onClick={() => navigate('/store')}>
         <h1>I still have nothing to sell you.</h1>

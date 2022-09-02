@@ -676,6 +676,13 @@
   text-align: center;
   font-size: 1.3rem;
 }
+.gallary-image-wrapper {
+  float: left;
+  margin: 5px;
+}
+.gallary-image-wrapper image {
+  object-fit:contain;
+}
 .footer-wrapper {
   background-color: black;
   color: white;
